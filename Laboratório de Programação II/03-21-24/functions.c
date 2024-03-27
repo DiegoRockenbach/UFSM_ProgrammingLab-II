@@ -74,38 +74,6 @@ void relatorioMunMaiorIncidencia(Municipio **vet, int quantMunicipios, int linha
 
 }
 
-void imprimeMunicipio(Municipio **vet, int linha, int i){
-
-  int j, k;
-
-  printf("\nNome: %s;\n", vet[i]->nome);
-  printf("População: %d;\n", vet[i]->populacao);
-  printf("Matriz de dados: \n");
-  for (j = 0; j < linha; j++){
-    for (k = 0; k < 3; k++){
-      printf("%d ", vet[i]->dados[j][k]);
-    }
-    printf("\n");
-  }
-  printf("\n\n");
-
-}
-
-int contaObitos(Municipio **vet, int linha, int i){
-
-  int j, k, totalObitos = 0;
-
-  for (j = 0; j < linha; j++){
-    for (k = 0; k < 3; k++){
-      if (k == 2){
-        totalObitos = totalObitos+vet[i]->dados[j][k];
-      }
-    }
-  }
-
-  return totalObitos;
-}
-
 float calculaMortalidade100k(Municipio **vet, int linha, int i){
 
   float mortalidade100k;
@@ -126,6 +94,21 @@ float calculaIncidencia100k(Municipio **vet, int linha, int i){
   incidencia100k = (totalConfirmados*100000)/vet[i]->populacao;
 
   return incidencia100k;
+}
+
+int contaObitos(Municipio **vet, int linha, int i){
+
+  int j, k, totalObitos = 0;
+
+  for (j = 0; j < linha; j++){
+    for (k = 0; k < 3; k++){
+      if (k == 2){
+        totalObitos = totalObitos+vet[i]->dados[j][k];
+      }
+    }
+  }
+
+  return totalObitos;
 }
 
 int contaConfirmados(Municipio **vet, int linha, int i){
@@ -157,6 +140,23 @@ void imprimeListagemEpidemiologica(Municipio **vet, int linha, int quantMunicipi
     printf("Mortalidade por 100 mil habitantes: %.2f;\n", calculaMortalidade100k(vet, linha, i));
   }
 
+  printf("\n\n");
+
+}
+
+void imprimeMunicipio(Municipio **vet, int linha, int i){
+
+  int j, k;
+
+  printf("\nNome: %s;\n", vet[i]->nome);
+  printf("População: %d;\n", vet[i]->populacao);
+  printf("Matriz de dados: \n");
+  for (j = 0; j < linha; j++){
+    for (k = 0; k < 3; k++){
+      printf("%d ", vet[i]->dados[j][k]);
+    }
+    printf("\n");
+  }
   printf("\n\n");
 
 }

@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void imprime_matrizSimples(int m, int n, int *mat);
 
 void populaMatrizSimples(int *mat, int linha, int coluna);

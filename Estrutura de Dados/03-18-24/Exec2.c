@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "signatures.h"
+#include "functions.h"
 #include "functions.c"
 
 int main(){
