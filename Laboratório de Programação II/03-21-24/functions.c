@@ -227,6 +227,7 @@ Municipio** alocaVetorPonteirosPontosDinamicos(int linha, int quantMunicipios){
         }
       }
     }
+    count = 1;
   }
 
   return vet;
