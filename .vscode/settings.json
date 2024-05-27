@@ -3,6 +3,11 @@
     "*.C": "c",
     "*.c": "c",
     "stdio.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "stdbool.h": "c",
+    "veiculos.h": "c",
+    "locacoes.h": "c",
+    "clientes.h": "c",
+    "string.h": "c"
   }
 }
