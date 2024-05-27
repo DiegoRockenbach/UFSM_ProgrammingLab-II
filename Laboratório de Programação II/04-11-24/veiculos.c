@@ -1,11 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 #include "veiculos.h"
+
+void bufferVeiculos(){
+  
+  int c;
+  while((c = getchar()) != '\n' && c != EOF) {}
+
+}
 
 Veiculos* addVeiculo(Veiculos *inicio){
 
-/*   Veiculos *p, *novo;
+  Veiculos *p, *novo;
 
   novo = (Veiculos*) malloc(sizeof(Veiculos));
   if (novo == NULL){
@@ -17,7 +25,8 @@ Veiculos* addVeiculo(Veiculos *inicio){
 
   printf("\nInsira as informações do veículo a ser inserido: \n\n");
   printf("PLACA:\n");
-  scanf("%d", &novo->dados.placa);
+  bufferVeiculos();
+  gets(novo->dados.placa);
   printf("MARCA:\n");
   gets(novo->dados.marca);
   printf("MODELO:\n");
@@ -25,7 +34,7 @@ Veiculos* addVeiculo(Veiculos *inicio){
   printf("ANO DE FABRICAÇÃO:\n");
   scanf("%d", &novo->dados.anoFabr);
   printf("QUILOMETRAGEM ATUAL:\n");
-  scanf("%d", &novo->dados.quilometragem);
+  scanf("%ld", &novo->dados.quilometragem);
   printf("VALOR DA DIÁRIA:\n");
   scanf("%f", &novo->dados.valorDiaria);
   novo->dados.disponivel = true;
@@ -39,7 +48,7 @@ Veiculos* addVeiculo(Veiculos *inicio){
   }
   else {
     return novo;
-  } */
+  }
 
   return inicio;
 }
@@ -48,20 +57,23 @@ void listaVeiculos(Veiculos *inicio){
 
   int count = 0;
 
+  if (inicio == NULL){
+    printf("\nNenhum veículo registrado no banco de dados; \n");
+  }
   while (inicio != NULL){
     count++;
     printf("\n%d° CARRO: \n\n", count);
-    printf("Placa - %d;\n", inicio->dados.placa);
+    printf("Placa - %s;\n", inicio->dados.placa);
     printf("Marca - %s;\n", inicio->dados.marca);
     printf("Modelo - %s;\n", inicio->dados.modelo);
     printf("Ano de fabricação - %d;\n", inicio->dados.anoFabr);
-    printf("Quilometragem anual - %d;\n", inicio->dados.quilometragem);
+    printf("Quilometragem atual - %ld km;\n", inicio->dados.quilometragem);
     printf("Valor da diária - R$ %.2f;\n", inicio->dados.valorDiaria);
     if (inicio->dados.disponivel == true){
-      printf("O carro está disponível;\n");
+      printf("O veículo está disponível;\n");
     }
     else {
-      printf("O carro NÃO está disponível!\n");
+      printf("O veículo NÃO está disponível;\n");
     }
     if (inicio->prox != NULL){
       inicio = inicio->prox;
@@ -70,4 +82,26 @@ void listaVeiculos(Veiculos *inicio){
       break;
     }
   }
+}
+
+Veiculo* buscaVeiculo(Veiculos *inicio, char *placa){
+  
+  Veiculo *found;
+
+  if (inicio != NULL){
+    while (true){
+      if (strcmp(placa, inicio->dados.placa) == 0){
+        found = &inicio->dados;
+        return found;
+      }
+      if (inicio->prox != NULL){
+        inicio = inicio->prox;
+      }
+      else {
+        break;
+      }
+    }
+  }
+
+  return NULL;
 }

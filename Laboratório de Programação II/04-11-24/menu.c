@@ -5,10 +5,10 @@ int imprimeMenu(){
 
   int opcao;
 
-  printf("\nEscolha uma das seguintes opções: \n\n");
+  printf("\n\nEscolha uma das seguintes opções: \n\n");
   printf("1 - Incluir veículos;\n");
   printf("2 - Listar veículos;\n");
-  printf("3 - Inclur clientes;\n");
+  printf("3 - Incluir clientes;\n");
   printf("4 - Listar clientes;\n");
   printf("5 - Realizar locação;\n");
   printf("6 - Devolver veículo;\n");
