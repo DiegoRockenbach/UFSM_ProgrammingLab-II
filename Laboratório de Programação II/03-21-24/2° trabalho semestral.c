@@ -21,7 +21,7 @@ int main(){
     printf("\n\n%d° município: \n", i+1);
     printf("\nInsira o nome do município em questão: \n");
     buffer();
-    gets(vet[i]->nome);
+    fgets(vet[i]->nome, 80, stdin);
     printf("\nInsira a população do município em questão: \n");
     scanf("%d", &vet[i]->populacao);
     printf("\nAgora, insira a matriz de dados do município em questão: \n");
@@ -55,7 +55,7 @@ int main(){
       case 1:
         printf("\nInsira o nome pelo qual deseja buscar: \n");
         buffer();
-        gets(buscaMunicipio);
+        fgets(buscaMunicipio, 80, stdin);
         for (i = 0; i < quantMunicipios; i++){
           if (strcmp(vet[i]->nome, buscaMunicipio) == 0){
             flag = 1;

@@ -4,7 +4,7 @@
 
 void relatorioQuantidadeMunSemNovosObitos(Municipio **vet, int quantMunicipios, int linha){
 
-  int i, j, k, quant = 0;
+  int i, quant = 0;
 
   for (i = 0; i < quantMunicipios; i++){
     if (vet[i]->dados[linha-1][2] == 0){
