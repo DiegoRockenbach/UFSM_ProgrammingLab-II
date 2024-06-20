@@ -8,6 +8,7 @@
     "veiculos.h": "c",
     "locacoes.h": "c",
     "clientes.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "bandeja.h": "c"
   }
 }

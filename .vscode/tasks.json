@@ -37,7 +37,21 @@
 				"isDefault": false
 			},
 			"detail": "compiler: C:\\mingw64\\bin\\gcc.exe"
-		}
+		},
+
+		{
+			"type": "shell",
+			"label": "BUILDLabII_05-28-24",
+			"command": "clear; Remove-Item -Force -Recurse -Path ./output 2>null; mkdir output 2>null; del null; gcc -Wall -o ./output/out.exe main.c filas.c bandejas.c; start ./output/out.exe;",
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"detail": "compiler: C:\\mingw64\\bin\\gcc.exe"
+		}		
 
 	]
 }
