@@ -9,6 +9,7 @@
     "locacoes.h": "c",
     "clientes.h": "c",
     "string.h": "c",
-    "bandeja.h": "c"
+    "bandeja.h": "c",
+    "limits": "c"
   }
 }
