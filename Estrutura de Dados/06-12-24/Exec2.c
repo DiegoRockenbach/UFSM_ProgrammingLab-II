@@ -19,7 +19,7 @@ int main(){
   arv2 = inicializaArvoreInt(2, NULL, arv3);
   arv1 = inicializaArvoreInt(1, NULL, arv2);
 
-  printf("\nConsidere a seguinte árvore descrita em pré-ordem(mesma do exercício 1): \n");
+  printf("\nConsidere a seguinte árvore descrita em pós-ordem(mesma do exercício 1): \n");
   imprimePercursoPosOrdem(arv1);
   printf("\nNesta árvore, há %d números pares; \n\n", contaNumPares(arv1));
 
