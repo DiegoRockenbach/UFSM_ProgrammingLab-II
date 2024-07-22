@@ -1,0 +1,11 @@
+Busca em largura (pré-ordem):
+A; B; D; E; K; C; F; I; J;
+
+Busca em largura (pós-ordem):
+A; B; D; E; K; C; F; I; J;
+
+Busca em profundidade (pré-ordem):
+A; B; C; F; J; D; E; I; K;
+
+Busca em profundidade (pós ordem):
+C; J; F; B; D; I; K; E; A;
